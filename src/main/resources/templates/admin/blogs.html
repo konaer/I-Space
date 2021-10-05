@@ -115,7 +115,7 @@
                 <a onclick="page(this)" th:attr="data-page=${page.number}-1" class="item" th:unless="${page.first}">Last Page</a>
                 <a onclick="page(this)" th:attr="data-page=${page.number}+1" class=" item" th:unless="${page.last}">Next Page</a>
               </div>
-              <a href="#" th:href="@{/admin/blogs/input}" class="ui mini right floated teal basic button">Add</a>
+              <a href="#" th:href="@{/admin/blogs/input}" class="ui mini right floated teal basic button">Submit</a>
             </th>
           </tr>
           </tfoot>
