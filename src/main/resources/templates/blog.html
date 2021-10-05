@@ -3,7 +3,7 @@
 <head th:replace="_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>博客详情</title>
+  <title>Article</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../static/css/typo.css">
   <link rel="stylesheet" href="../static/css/animate.css">
@@ -43,10 +43,10 @@
         <div class="ui horizontal link list">
           <div class="item">
             <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}"  alt="" class="ui avatar image">
-            <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}">李仁密</a></div>
+            <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}">name</a></div>
           </div>
           <div class="item">
-            <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2017-10-01</span>
+            <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2021-10-01</span>
           </div>
           <div class="item">
             <i class="eye icon"></i> <span th:text="${blog.views}">2342</span>
@@ -431,24 +431,24 @@ h5,h6{font-size:1em;}
 
         <!--标签-->
         <div class="m-padded-lr-responsive">
-          <div class="ui basic teal left pointing label" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</div>
+          <div class="ui basic teal left pointing label" th:each="tag : ${blog.tags}" th:text="${tag.name}">tag.name</div>
         </div>
 
         <!--赞赏-->
         <div th:if="${blog.appreciation}">
           <div class="ui center aligned basic segment">
-            <button id="payButton" class="ui orange basic circular button">赞赏</button>
+            <button id="payButton" class="ui orange basic circular button">Contact Writer</button>
           </div>
           <div class="ui payQR flowing popup transition hidden">
             <div class="ui orange basic label">
               <div class="ui images" style="font-size: inherit !important;">
                 <div class="image">
                   <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui rounded bordered image" style="width: 120px">
-                  <div>支付宝</div>
+                  <div>Linkedin</div>
                 </div>
                 <div class="image">
-                  <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui rounded bordered image" style="width: 120px">
-                  <div>微信</div>
+                  <img src="../static/images/wechat.jpg" th:src="@{/images/ins.png}" alt="" class="ui rounded bordered image" style="width: 120px">
+                  <div>Instagram</div>
                 </div>
               </div>
             </div>
@@ -461,10 +461,8 @@ h5,h6{font-size:1em;}
         <div class="ui middle aligned grid">
           <div class="eleven wide column">
             <ui class="list">
-              <li>作者：<span th:text="${blog.user.nickname}">李仁密</span><a href="#" th:href="@{/about}" target="_blank">（联系作者）</a></li>
-              <li>发表时间：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2017-10-02 09:08</span></li>
-              <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
-              <li>公众号转载：请在文末添加作者公众号二维码</li>
+              <li>Author：<span th:text="${blog.user.nickname}">name</span><a href="#" th:href="@{/about}" target="_blank">（contact author）</a></li>
+              <li>Post Time：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2021-10-02 09:08</span></li>
             </ui>
           </div>
           <div class="five wide column">
@@ -477,7 +475,7 @@ h5,h6{font-size:1em;}
         <div id="comment-container"  class="ui teal segment">
           <div th:fragment="commentList">
             <div class="ui threaded comments" style="max-width: 100%;">
-              <h3 class="ui dividing header">评论</h3>
+              <h3 class="ui dividing header">Comment</h3>
               <div class="comment" th:each="comment : ${comments}">
                 <a class="avatar">
                   <img src="https://unsplash.it/100/100?image=1005" th:src="@{${comment.avatar}}">
@@ -488,7 +486,7 @@ h5,h6{font-size:1em;}
                     <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${comment.adminComment}">博主</div>
                   </a>
                   <div class="metadata">
-                    <span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                    <span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">comment time</span>
                   </div>
                   <div class="text" th:text="${comment.content}">
                     How artistic!
@@ -535,7 +533,7 @@ h5,h6{font-size:1em;}
                     <p>This has been very useful for my research. Thanks as well!</p>
                   </div>
                   <div class="actions">
-                    <a class="reply">回复</a>
+                    <a class="reply">Reply</a>
                   </div>
                 </div>
                 <div class="comments">
@@ -571,7 +569,7 @@ h5,h6{font-size:1em;}
                     Dude, this is awesome. Thanks so much
                   </div>
                   <div class="actions">
-                    <a class="reply">回复</a>
+                    <a class="reply">Reply</a>
                   </div>
                 </div>
               </div>
@@ -584,23 +582,23 @@ h5,h6{font-size:1em;}
           <input type="hidden" name="blog.id" th:value="${blog.id}">
           <input type="hidden" name="parentComment.id" value="-1">
           <div class="field">
-            <textarea name="content" placeholder="请输入评论信息..."></textarea>
+            <textarea name="content" placeholder="Please enter your comment here..."></textarea>
           </div>
           <div class="fields">
             <div class="field m-mobile-wide m-margin-bottom-small">
               <div class="ui left icon input">
                 <i class="user icon"></i>
-                <input type="text" name="nickname" placeholder="姓名" th:value="${session.user}!=null ? ${session.user.nickname}">
+                <input type="text" name="nickname" placeholder="name" th:value="${session.user}!=null ? ${session.user.nickname}">
               </div>
             </div>
             <div class="field m-mobile-wide m-margin-bottom-small">
               <div class="ui left icon input">
                 <i class="mail icon"></i>
-                <input type="text" name="email" placeholder="邮箱" th:value="${session.user}!=null ? ${session.user.email}">
+                <input type="text" name="email" placeholder="Email" th:value="${session.user}!=null ? ${session.user.email}">
               </div>
             </div>
             <div class="field  m-margin-bottom-small m-mobile-wide">
-              <button id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</button>
+              <button id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"><i class="edit icon"></i>Submit</button>
             </div>
           </div>
 
@@ -611,9 +609,9 @@ h5,h6{font-size:1em;}
 
   <div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
     <div class="ui vertical icon buttons ">
-      <button type="button" class="ui toc teal button" >目录</button>
-      <a href="#comment-container" class="ui teal button" >留言</a>
-      <button class="ui wechat icon button"><i class="weixin icon"></i></button>
+<!--      <button type="button" class="ui toc teal button" >目录</button>-->
+      <a href="#comment-container" class="ui teal button" >Go to comments</a>
+      <button class="ui wechat icon button"><i class="linkedin icon"></i></button>
       <div id="toTop-button" class="ui icon button" ><i class="chevron up icon"></i></div>
     </div>
   </div>
@@ -654,17 +652,17 @@ h5,h6{font-size:1em;}
         <div class="three wide column">
           <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
           <div class="ui inverted link list">
-            <a href="#" class="item m-text-thin">Email：lirenmi@163.com</a>
-            <a href="#" class="item m-text-thin">QQ：865729312</a>
+            <a href="#" class="item m-text-thin">Email：</a>
+            <a href="#" class="item m-text-thin">Q</a>
           </div>
         </div>
         <div class="seven wide column">
           <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
-          <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+          <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客</p>
         </div>
       </div>
       <div class="ui inverted section divider"></div>
-      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2016 - 2017 Lirenmi Designed by Lirenmi</p>
+      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright </p>
     </div>
 
   </footer>
