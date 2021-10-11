@@ -8,3 +8,7 @@ spring:
 
 comment.avatar: /images/avatar.png
 
+server:
+  #端口号
+  port: 80
+
