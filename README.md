@@ -4,9 +4,11 @@
     A step by step full stack blog website
     <br />
     <a href="https://github.com/konaer/iblog"><strong>Explore the source code »</strong></a>
+    <p>Visit I-Space website</p>
+    <p>www.ispaceblog.tk</p>
     <br />
     <br />
-    <a href="www.ispaceblog.tk">Go to I-Space website</a>
+    <a href="#">Demo</a>
     ·
     <a href="https://github.com/konaer/iblog/issues">Report Bug</a>
   </p>
