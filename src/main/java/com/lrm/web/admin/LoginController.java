@@ -41,7 +41,7 @@ public class LoginController {
             session.setAttribute("user",user);
             return "admin/index";
         } else {
-            attributes.addFlashAttribute("message", "用户名和密码错误");
+            attributes.addFlashAttribute("message", "Wrong Username or Password");
             return "redirect:/admin";
         }
     }

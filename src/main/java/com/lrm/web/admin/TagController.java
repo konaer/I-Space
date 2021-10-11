@@ -52,16 +52,16 @@ public class TagController {
     public String post(@Valid Tag tag,BindingResult result, RedirectAttributes attributes) {
         Tag tag1 = tagService.getTagByName(tag.getName());
         if (tag1 != null) {
-            result.rejectValue("name","nameError","不能添加重复的分类");
+            result.rejectValue("name","nameError","label already exist");
         }
         if (result.hasErrors()) {
             return "admin/tags-input";
         }
         Tag t = tagService.saveTag(tag);
         if (t == null ) {
-            attributes.addFlashAttribute("message", "新增失败");
+            attributes.addFlashAttribute("message", "failed");
         } else {
-            attributes.addFlashAttribute("message", "新增成功");
+            attributes.addFlashAttribute("message", "succeed");
         }
         return "redirect:/admin/tags";
     }
@@ -71,16 +71,16 @@ public class TagController {
     public String editPost(@Valid Tag tag, BindingResult result,@PathVariable Long id, RedirectAttributes attributes) {
         Tag tag1 = tagService.getTagByName(tag.getName());
         if (tag1 != null) {
-            result.rejectValue("name","nameError","不能添加重复的分类");
+            result.rejectValue("name","nameError","category already exist");
         }
         if (result.hasErrors()) {
             return "admin/tags-input";
         }
         Tag t = tagService.updateTag(id,tag);
         if (t == null ) {
-            attributes.addFlashAttribute("message", "更新失败");
+            attributes.addFlashAttribute("message", "update failed");
         } else {
-            attributes.addFlashAttribute("message", "更新成功");
+            attributes.addFlashAttribute("message", "update succeed");
         }
         return "redirect:/admin/tags";
     }
@@ -88,7 +88,7 @@ public class TagController {
     @GetMapping("/tags/{id}/delete")
     public String delete(@PathVariable Long id,RedirectAttributes attributes) {
         tagService.deleteTag(id);
-        attributes.addFlashAttribute("message", "删除成功");
+        attributes.addFlashAttribute("message", "successful delete");
         return "redirect:/admin/tags";
     }
 
