@@ -39,8 +39,8 @@
   <div class="ui attached pointing menu">
     <div class="ui container">
       <div class="right menu">
-        <a href="#" th:href="@{/admin/blogs/input}" class="teal active item">发布</a>
-        <a href="#" th:href="@{/admin/blogs}" class="item">列表</a>
+        <a href="#" th:href="@{/admin/blogs/input}" class="teal active item">post</a>
+        <a href="#" th:href="@{/admin/blogs}" class="item">list</a>
       </div>
     </div>
   </div>
@@ -237,35 +237,35 @@
           identifier: 'title',
           rules: [{
             type : 'empty',
-            prompt: '标题：请输入博客标题'
+            prompt: 'Please enter a title'
           }]
         },
         content : {
           identifier: 'content',
           rules: [{
             type : 'empty',
-            prompt: '标题：请输入博客内容'
+            prompt: 'Please enter some content'
           }]
         },
         typeId : {
           identifier: 'type.id',
           rules: [{
             type : 'empty',
-            prompt: '标题：请输入博客分类'
+            prompt: 'Please choose category'
           }]
         },
         firstPicture : {
           identifier: 'firstPicture',
           rules: [{
             type : 'empty',
-            prompt: '标题：请输入博客首图'
+            prompt: 'Please enter a photo'
           }]
         },
         description : {
           identifier: 'description',
           rules: [{
             type : 'empty',
-            prompt: '标题：请输入博客描述'
+            prompt: 'Please enter a description'
           }]
         }
       }
