@@ -6,7 +6,7 @@
     <a href="https://github.com/konaer/iblog"><strong>Explore the source code »</strong></a>
     <br />
     <br />
-    <a href="https://www.youtube.com/">View Demo</a>
+    <a href="www.ispaceblog.tk">Go to I-Space website</a>
     ·
     <a href="https://github.com/konaer/iblog/issues">Report Bug</a>
   </p>
