@@ -3,12 +3,10 @@
   <p align="center">
     A step by step full stack blog website
     <br />
-    <a href="https://github.com/konaer/iblog"><strong>Explore the source code »</strong></a>
-    <p>Visit I-Space website</p>
-    <p>www.ispaceblog.tk</p>
+    <a href="https://github.com/konaer/iblog"><strong>Explore the source code</strong></a>
     <br />
     <br />
-    <a href="#">Demo</a>
+    <a href="http://www.ispaceblog.tk/">Visit I-Space</a>
     ·
     <a href="https://github.com/konaer/iblog/issues">Report Bug</a>
   </p>
